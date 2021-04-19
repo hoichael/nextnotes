@@ -1,0 +1,53 @@
+.container {
+  width: 88vw;
+  height: 88vh;
+  margin-left: 6vw;
+/*  margin-top: clamp(20px , 4%, 56px); */
+  margin-top: 5vh;
+  text-align: center;
+}
+
+.upper {
+  width: 68%;
+  height: 224px;
+  margin-left: 16%;
+
+  transition: 0.5s;
+}
+
+.lower {
+  width: 90%;
+  height: 70%;
+  margin-left: 5%;
+  margin-top: 5vh;
+
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 900px) {
+  .upper {
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .lower {
+    width: 98%;
+    margin-left: 1%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .lower {
+    height: 64%;
+    margin-top: 36px;
+  }
+
+}
+
+@-moz-document url-prefix() { 
+  .container {
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Fredoka One', cursive, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    background-color: rgb(194, 230, 255);
+    overflow: hidden;
+    
+}
+
+::-moz-selection {
+  color: black;
+  background: rgba(0,0,0,0);
+}
+
+::selection {
+  color: black;
+  background: rgba(0,0,0,0);
+}
+

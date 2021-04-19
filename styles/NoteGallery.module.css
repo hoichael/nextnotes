@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #1f3c88;
+    border-radius: 10px;
+/*    box-shadow: 10px 10px #070d59; */
+    float: left;
+}
+
+.nonotesheader {
+    margin-top: 112px;
+    font-size: clamp(64px, 8vw, 128px)
+}
+
+.innercontainer {
+    width: 94%;
+    height: 76%;
+    margin-left: 3%;
+    margin-top: 3%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgb(194, 230, 255);
+    overflow-y: scroll;
+}
+
+
+@-moz-document url-prefix() { 
+    .innercontainer {
+      scrollbar-width: none;
+    }
+}
+
+.innercontainer::-webkit-scrollbar {
+    width: 0px;
+}
+
+  

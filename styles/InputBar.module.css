@@ -1,0 +1,53 @@
+.container {
+    height: 20%;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    width: 40%;
+    height: 90%;
+    margin-left: 30%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: 24px;
+    letter-spacing: 4px;
+    background-color: orange;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: orangered;
+}
+
+.counter {
+    color: orange;
+    margin-left: 8%;
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.counter::selection {
+    color: orange;
+    background: rgba(0,0,0,0);
+}
+
+@-moz-document url-prefix() { 
+    .container {
+      margin-top: 6px;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .counter {
+            margin-left: 20px;
+        }
+
+    }
+}
