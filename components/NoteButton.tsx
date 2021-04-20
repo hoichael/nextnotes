@@ -1,11 +1,24 @@
 import styles from "../styles/NoteButtons.module.css"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Dispatch, SetStateAction } from "react"
 import deleteByID from "../utils/deleteByID"
+import noteINT from "../interfaces/noteINT"
 
+interface Props {
+    which: "copy" | "delete";
+    text: string;
+    id: number;
+    content: string;
+    char: string;
+    setStoredNotes: Dispatch<SetStateAction<(noteINT | null)[]>>;
+}
 
-export default function NoteBtn( { which, text, id, content, char, setStoredNotes } ) {
+export default function NoteBtn( { which, text, id, content, char, setStoredNotes }: Props ) {
 
-    const [styling, setStyling] = useState({
+    const [styling, setStyling] = useState<{
+        wrapper?: string,
+        btn?: string,
+        popup?: string
+    }>({
         wrapper: undefined,
         btn: undefined,
         popup: undefined
@@ -27,17 +40,13 @@ export default function NoteBtn( { which, text, id, content, char, setStoredNote
         }
     }, [])
 
-    function handleClick(e) {
+    function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
         e.stopPropagation()
         if(which === "copy") {
-            const type = 'text/plain';
-            const blob = new Blob([content], { type });
-
             try {
-                let data = [new ClipboardItem({ [type]: blob })];
-                navigator.clipboard.write(data).then(function() {
-                  }, function() {
-                  });
+                navigator.clipboard.writeText(content).catch((e) => {
+                    throw new Error(e)
+                })
             } catch(err) {
                 console.log(err);
                 alert("uh oh! looks like you don't allow firefox to write to the clipboard. ( the related setting can be found at about:config (don't bother fucking with that though) )")

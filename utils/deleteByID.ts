@@ -1,6 +1,6 @@
-import type { Dispatch, SetStateAction } from "react"
+import noteINT from "../interfaces/noteINT"
 
-const deleteByID = function(ID:number, setStorage:Dispatch<SetStateAction<{}[]>>):void {
+const deleteByID = function(ID:number, setStorage: (notes: noteINT[]) => void):void {
 
     function checkID(element:any) {
         return element.id !== ID;
